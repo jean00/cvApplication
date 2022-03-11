@@ -32,3 +32,61 @@
   box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
   border-radius: 2%;
 }
+
+.top {
+  display: flex;
+  gap: 90px;
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
+.imgcontainer {
+  margin-top: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.info {
+  display: inline;
+}
+
+.button {
+  height: 2.5rem;
+  width: 4.5rem;
+  margin: 5px;
+  visibility: visible;
+}
+
+.PersonalinfosForm > div {
+  margin-top: 10px;
+}
+
+.imgcontainer > input {
+  display: none;
+}
+.button {
+  cursor: pointer;
+}
+input {
+  border-bottom: 1px solid #000000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+/*removes arrows/spinner in chrome, safari, edge and opera*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*this is for firefox*/
+input[type="number"] {
+  -moz-appearance: textfield;
+}
