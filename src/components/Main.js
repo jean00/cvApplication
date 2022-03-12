@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import PersonalInformations from "./sections/PersonalInformations";
 import Profile from "./sections/Profile";
+import Contacts from "./sections/Contacts";
+import Educations from "./sections/Educations";
+import Experiences from "./sections/Experiences";
+import Languages from "./sections/Languages"
 
 class Main extends Component {
   render() {
@@ -11,6 +15,12 @@ class Main extends Component {
             <section className="top">
               <Profile></Profile>
               <PersonalInformations></PersonalInformations>
+            </section>
+            <section className="mid">
+              <Contacts></Contacts>
+              <Educations></Educations>
+              <Experiences></Experiences>
+              <Languages></Languages>
             </section>
           </div>
         </section>

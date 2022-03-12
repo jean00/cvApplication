@@ -25,7 +25,7 @@ class Profile extends Component {
         </label>
         <input
           type="file"
-          id="file-input"
+          className="file-input"
           accept="image/*"
           onChange={this.imgHandler}
         />

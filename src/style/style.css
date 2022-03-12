@@ -31,13 +31,17 @@
   height: auto;
   box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
   border-radius: 2%;
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 .top {
   display: flex;
   gap: 90px;
-  margin-top: 40px;
-  margin-left: 50px;
+}
+
+.mid > div {
+  margin-top: 20px;
 }
 
 .imgcontainer {
@@ -60,19 +64,13 @@ img {
   height: 2.5rem;
   width: 4.5rem;
   margin: 5px;
+  cursor: pointer;
   visibility: visible;
 }
-
-.PersonalinfosForm > div {
-  margin-top: 10px;
-}
-
-.imgcontainer > input {
+.file-input {
   display: none;
 }
-.button {
-  cursor: pointer;
-}
+
 input {
   border-bottom: 1px solid #000000;
   border-top: none;

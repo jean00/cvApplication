@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 class PersonalInformations extends Component {
   state = {
     firstname: "",
@@ -12,6 +11,38 @@ class PersonalInformations extends Component {
     hidden: true,
   };
 
+  handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  onSubmitTask = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    this.setState({
+      disabled: true,
+      hidden: false,
+    });
+  };
+
+  enableInput = (e) => {
+    e.preventDefault();
+    if (this.state.hidden === true) {
+      this.setState({
+        hidden: false,
+        disabled: false,
+      });
+    } else {
+      this.setState({
+        hidden: true,
+        disabled: false,
+      });
+    }
+  };
+
   render() {
     return (
       <div className="inputInfos Container">
@@ -19,7 +50,7 @@ class PersonalInformations extends Component {
           <h1 className="pInfos info"> Personal information </h1>
           <button
             type="submit"
-            disabled={this.state.disabled}
+            disabled={this.sendData}
             className="submit button"
           >
             Submit
