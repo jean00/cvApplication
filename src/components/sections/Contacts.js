@@ -94,7 +94,7 @@ class Contacts extends Component {
           </button>
           {this.state.phone.map((input, index) => {
             return (
-              <div key={index}>
+              <div className="contactsInfos" key={index}>
                 <div className="phone">
                   <label> Phone Number: </label>
                   <input

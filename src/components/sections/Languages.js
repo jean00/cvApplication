@@ -67,7 +67,7 @@ class Languages extends Component {
       <div className="languages">
         <form onSubmit={this.onSubmitTask}>
           <h1 className="info">Languages </h1>
-          <button className="submit button">Submit</button>
+          <button className="submit button" disabled={this.state.disabled}>Submit</button>
           <button
             className="addmore button"
             onClick={this.addFields}

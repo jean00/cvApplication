@@ -71,7 +71,7 @@ class Experiences extends Component {
       <div className="experience">
         <form onSubmit={this.onSubmitTask}>
           <h1 className="info">Experience </h1>
-          <button className="submit button">Submit</button>
+          <button className="submit button" disabled={this.state.disabled}>Submit</button>
           <button
             className="addmore button"
             onClick={this.addFields}
@@ -89,8 +89,8 @@ class Experiences extends Component {
           </button>
           {this.state.experiences.map((input, index) => {
             return (
-              <div className="div" key={index}>
-                <div>
+              <div className = "container" key={index}>
+                <div className="experiencesInfos">
                   <div>
                     <label> Company: </label>
                     <input

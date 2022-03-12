@@ -4,9 +4,16 @@ import Profile from "./sections/Profile";
 import Contacts from "./sections/Contacts";
 import Educations from "./sections/Educations";
 import Experiences from "./sections/Experiences";
-import Languages from "./sections/Languages"
+import Languages from "./sections/Languages";
 
 class Main extends Component {
+  state = {
+    submit: ""
+  }
+  checkSubmit = (ssubmit) => {
+    this.setState({submit: ssubmit})
+    console.log(this.state.submit)
+  }
   render() {
     return (
       <main>
@@ -14,7 +21,7 @@ class Main extends Component {
           <div className="doc">
             <section className="top">
               <Profile></Profile>
-              <PersonalInformations></PersonalInformations>
+              <PersonalInformations submit = {this.checkSubmit}></PersonalInformations>
             </section>
             <section className="mid">
               <Contacts></Contacts>

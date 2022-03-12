@@ -44,10 +44,20 @@
   margin-top: 20px;
 }
 
+.PersonalinfosForm > div,
+.degree > div,
+.experiencesInfos > div {
+  margin-top: 10px;
+}
 .imgcontainer {
   margin-top: 10px;
   height: 200px;
   width: 200px;
+}
+.container{
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 img {

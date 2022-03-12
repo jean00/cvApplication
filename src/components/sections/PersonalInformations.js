@@ -21,12 +21,13 @@ class PersonalInformations extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    console.log(this.state);
     this.setState({
       disabled: true,
       hidden: false,
     });
-  };
+    console.log(this.state);
+    this.props.submit(this.state.disabled)
+  };//google setstate does not update state immediately
 
   enableInput = (e) => {
     e.preventDefault();
@@ -45,12 +46,12 @@ class PersonalInformations extends Component {
 
   render() {
     return (
-      <div className="inputInfos Container">
-        <form className="PersonalinfosForm">
+      <div className="inputInfos">
+        <form className="PersonalinfosForm" onSubmit={this.onSubmitTask}>
           <h1 className="pInfos info"> Personal information </h1>
           <button
             type="submit"
-            disabled={this.sendData}
+            disabled={this.state.disabled}
             className="submit button"
           >
             Submit

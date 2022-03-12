@@ -69,7 +69,7 @@ class Education extends Component {
     //console.log(this.state);
     return (
       <div className="education">
-        <form onSubmit={this.onSubmitTask}>
+        <form className="educationInfos" onSubmit={this.onSubmitTask}>
           <h1 className="info">Education </h1>
           <button className="submit button" disabled={this.state.disabled}>
             Submit
@@ -91,8 +91,8 @@ class Education extends Component {
           </button>
           {this.state.education.map((input, index) => {
             return (
-              <div className="degree div" key={index}>
-                <div>
+              <div className = "container" key={index}>
+                <div className="degree">
                   <div>
                     <label> School name: </label>
                     <input
