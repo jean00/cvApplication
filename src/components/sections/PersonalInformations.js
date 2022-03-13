@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 class PersonalInformations extends Component {
+  constructor() {
+    super();
+    this.name = "personalInfomations";
+  }
   state = {
     firstname: "",
     lastname: "",
@@ -21,13 +25,16 @@ class PersonalInformations extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    this.setState({
-      disabled: true,
-      hidden: false,
-    });
-    console.log(this.state);
-    this.props.submit(this.state.disabled)
-  };//google setstate does not update state immediately
+    this.setState(
+      {
+        disabled: true,
+        hidden: false,
+      },
+      () => {
+        this.props.submit(this.state.disabled, this.name); //using callback to get the updated value of disabled
+      }
+    );
+  };
 
   enableInput = (e) => {
     e.preventDefault();
@@ -37,10 +44,13 @@ class PersonalInformations extends Component {
         disabled: false,
       });
     } else {
-      this.setState({
-        hidden: true,
-        disabled: false,
-      });
+      this.setState(
+        {
+          hidden: true,
+          disabled: false,
+        },
+        () => this.props.submit(this.state.disabled, this.name)
+      );
     }
   };
 

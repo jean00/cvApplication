@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Education extends Component {
+  constructor() {
+    super();
+    this.name = "educations";
+  }
   state = {
     education: [
       {
@@ -24,11 +28,15 @@ class Education extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    this.setState({
-      disabled: true,
-      hidden: false,
-    });
-    console.log(this.state);
+    this.setState(
+      {
+        disabled: true,
+        hidden: false,
+      },
+      () => {
+        this.props.submit(this.state.disabled, this.name); //using callback to get the updated value of disabled
+      }
+    );
   };
 
   addFields = (e) => {
@@ -58,10 +66,13 @@ class Education extends Component {
         disabled: false,
       });
     } else {
-      this.setState({
-        hidden: true,
-        disabled: false,
-      });
+      this.setState(
+        {
+          hidden: true,
+          disabled: false,
+        },
+        () => this.props.submit(this.state.disabled, this.name)
+      );
     }
   };
 
@@ -91,7 +102,7 @@ class Education extends Component {
           </button>
           {this.state.education.map((input, index) => {
             return (
-              <div className = "container" key={index}>
+              <div className="container" key={index}>
                 <div className="degree">
                   <div>
                     <label> School name: </label>

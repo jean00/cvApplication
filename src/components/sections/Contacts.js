@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class Contacts extends Component {
+  constructor() {
+    super();
+    this.name = "contacts";
+  }
+
   state = {
     phone: [""],
     email: [""],
@@ -55,11 +60,15 @@ class Contacts extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    this.setState({
-      disabled: true,
-      hidden: false,
-    });
-    console.log(this.state);
+    this.setState(
+      {
+        disabled: true,
+        hidden: false,
+      },
+      () => {
+        this.props.submit(this.state.disabled, this.name); //using callback to get the updated value of disabled
+      }
+    );
   };
 
   enableInput = (e) => {
@@ -70,10 +79,13 @@ class Contacts extends Component {
         disabled: false,
       });
     } else {
-      this.setState({
-        hidden: true,
-        disabled: false,
-      });
+      this.setState(
+        {
+          hidden: true,
+          disabled: false,
+        },
+        () => this.props.submit(this.state.disabled, this.name)
+      );
     }
   };
 

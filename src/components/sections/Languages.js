@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Languages extends Component {
+  constructor() {
+    super();
+    this.name = "languages";
+  }
   state = {
     languages: [
       {
@@ -23,11 +27,15 @@ class Languages extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    this.setState({
-      disabled: true,
-      hidden: false,
-    });
+    this.setState(
+      {
+        disabled: true,
+        hidden: false,
+      },
+      () => {
+        this.props.submit(this.state.disabled, this.name); //using callback to get the updated value of disabled
+      }
+    );
   };
 
   addFields = (e) => {
@@ -45,10 +53,13 @@ class Languages extends Component {
         disabled: false,
       });
     } else {
-      this.setState({
-        hidden: true,
-        disabled: false,
-      });
+      this.setState(
+        {
+          hidden: true,
+          disabled: false,
+        },
+        () => this.props.submit(this.state.disabled, this.name)
+      );
     }
   };
 
@@ -67,7 +78,9 @@ class Languages extends Component {
       <div className="languages">
         <form onSubmit={this.onSubmitTask}>
           <h1 className="info">Languages </h1>
-          <button className="submit button" disabled={this.state.disabled}>Submit</button>
+          <button className="submit button" disabled={this.state.disabled}>
+            Submit
+          </button>
           <button
             className="addmore button"
             onClick={this.addFields}
