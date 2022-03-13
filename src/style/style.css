@@ -77,8 +77,8 @@ img {
   cursor: pointer;
   visibility: visible;
 }
-.file-input {
-  display: none;
+#file-input {
+  visibility: hidden;
 }
 
 .bottom {

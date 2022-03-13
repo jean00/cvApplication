@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Profile extends Component {
   state = {
-    img: "http://www.vmcolor.it/layout/images/man-profile.png",
+    img: "https://www.vmcolor.it/layout/images/man-profile.png",
   };
 
   imgHandler = (e) => {
@@ -25,7 +25,7 @@ class Profile extends Component {
         </label>
         <input
           type="file"
-          className="file-input"
+          id="file-input"
           accept="image/*"
           onChange={this.imgHandler}
         />
