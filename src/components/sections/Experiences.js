@@ -30,7 +30,6 @@ class Experiences extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    console.log(this.state);
     this.setState(
       {
         disabled: true,

@@ -77,7 +77,6 @@ class Education extends Component {
   };
 
   render() {
-    //console.log(this.state);
     return (
       <div className="education">
         <form className="educationInfos" onSubmit={this.onSubmitTask}>

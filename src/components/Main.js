@@ -20,7 +20,6 @@ class Main extends Component {
   iterator = () => {
     let array = Object.values(this.state);
     array.pop(); //popping the last element because we don't need it here
-    console.log(array);
     if (array.every((e) => e === true)) this.setState({ disabled: false });
   };
 

@@ -73,7 +73,6 @@ class Languages extends Component {
   };
 
   render() {
-    //console.log(this.state);
     return (
       <div className="languages">
         <form onSubmit={this.onSubmitTask}>
